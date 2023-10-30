@@ -14,7 +14,7 @@ app.use(bodyParser.json()); // needs to be before the routes
 app.use(authRoutes);
 app.use(trackRoutes);
 
-const mongoUri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@trackserver-rn.sirptvi.mongodb.net/?retryWrites=true&w=majority`
+const mongoUri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.DATABASE_NAME}.sirptvi.mongodb.net/?retryWrites=true&w=majority`
 mongoose.connect(mongoUri);
 
 mongoose.connection.on('connected', () => {
